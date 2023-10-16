@@ -25,7 +25,9 @@
         "type": "scaled_float"
       },
       "rate_code_id": {
-        "type": "keyword"
+        "type": "keyword",
+        "index": false,
+        "doc_values": true
       },
       "passenger_count": {
         "type": "integer"

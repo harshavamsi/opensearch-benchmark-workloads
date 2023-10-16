@@ -49,6 +49,51 @@
       }
     },
     {
+      "name": "simple_keyword_range",
+      "operation-type": "search",
+      "body": {
+        "query": {
+          "range": {
+            "rate_code_id": {
+              "gte": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "nested_keyword_range",
+      "operation-type": "search",
+      "body": {
+        "query": {
+          "bool": {
+            "filter": [
+              {
+                "term": {
+                  "store_and_fwd_flag": "N"
+                }
+              },
+              {
+                "range": {
+                  "trip_distance": {
+                    "lt": 50,
+                    "gte": 0
+                  }
+                }
+              },
+              {
+                "range": {
+                  "rate_code_id": {
+                    "gte": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
       "name": "distance_amount_agg",
       "operation-type": "search",
       "body": {
