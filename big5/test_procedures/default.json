@@ -17,4 +17,22 @@
     {% endwith %}
     {{ benchmark.collect(parts="common/test-schedule.json") }}
   ]
+},
+{
+  "name": "baseline",
+  "default": false,
+  "schedule": [
+{% with default_index_settings={}, index_name="big5" %}
+    {% endwith %}
+    {{ benchmark.collect(parts="common/baseline-schedule.json") }}
+  ]
+},
+{
+  "name": "octane",
+  "default": false,
+  "schedule": [
+	      {% with default_index_settings={}, index_name="big5" %}
+    {% endwith %}
+    {{ benchmark.collect(parts="common/octane-schedule.json") }}
+  ]
 }

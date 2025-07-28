@@ -851,6 +851,26 @@
         }
       }
     },
+        {
+      "name": "keyword-terms-octane",
+      "operation-type": "search",
+      "index": "{{index_name | default('big5')}}",
+      "body": {
+        "size": 0,
+        "aggs": {
+          "station": {
+            "terms": {
+              "field": "aws.cloudwatch.log_stream",
+              "size": 500
+            }
+          }
+        }
+      },
+        "request-params": {
+         "stream": "true",
+	 "batched_reduce_size": 20
+      }
+    },
     {
       "name": "keyword-terms-low-cardinality",
       "operation-type": "search",

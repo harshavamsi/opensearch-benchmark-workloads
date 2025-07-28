@@ -82,8 +82,8 @@
   "operation": "keyword-terms",
   "warmup-iterations": {{ warmup_iterations | default(200) | tojson }},
   "iterations": {{ test_iterations | default(100) | tojson }},
-  "target-throughput": {{ target_throughput | default(2) | tojson }},
-  "clients": {{ search_clients | default(1) }}
+      "target-throughput": {{ target_throughput | default(2) | tojson }},
+    "clients": {{ search_clients | default(1) }}
 },
 {
   "operation": "keyword-terms-low-cardinality",
